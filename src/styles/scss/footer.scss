@@ -1,0 +1,41 @@
+.footer {
+  
+  background: linear-gradient(89.75deg, #5328a1 32.83%, #95390c 81.56%);
+
+  &__grid {
+      padding: 3rem 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__title {
+      font-size: 18px;
+      line-height: 27px;
+      text-align: left;
+  }
+
+  &__img {
+    margin-right: 16px;
+  }
+
+  &__bottom {
+    padding: 2rem 0;
+    display: flex;
+    gap: 16px;
+  }
+}
+
+
+/*  MOBIL */
+@media screen and (max-width: 1239px) {
+  .footer{
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__bottom {
+      flex-direction: column;
+    }
+}
+}

@@ -1,0 +1,203 @@
+@use 'general.scss';
+@use 'variables.scss';
+@use 'header.scss';
+@use 'footer.scss';
+@use 'artist.scss';
+
+@mixin bg-img {
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    background-image: url('../images/banner.png');
+    @include bg-img; 
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.title-left {
+    text-align: left;
+  }
+
+/* DESKTOP */
+
+.banner {
+    padding: 200px 0;
+    text-align: center;
+
+    &__form {
+        max-width: 570px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "col-1 col-2" "col-3 col-3";
+        grid-gap: 1.5rem;
+    }
+
+    .form {
+        &__input {
+        color: #fff;
+        font-size: 14px;
+        padding-left: 20px;
+        min-width: 270px;
+        min-height: 50px;
+        background-color: transparent;
+        border: 1px solid #CACACA;
+        border-radius: 3px;
+        box-sizing: border-box;
+        }
+
+        &__btn {
+            grid-area: col-3;
+        }
+    }
+
+    .col {
+        &-1 {
+            grid-area: col-1;
+        }
+
+        &-2 {
+            grid-area: col-2;
+        }
+    }
+}
+
+/* PRICE */
+.price {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+    &__description {
+        margin: 50px 0 0 0;
+        text-align: center;
+    }
+}
+
+.card {
+    color: #fff;
+    padding: 0 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    &__title {
+        margin-bottom: 200px;
+    }
+
+    &__value {
+        font-size: 64px;
+        line-height: 1em;
+        margin: 0 0 40px 0;
+
+        sup {
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__footer {
+        font-size: 12.8px;
+        margin: 64px 0;
+    }
+}
+
+.bg {
+    &-free {
+        background-image: url(../images/subscribe_1.png);
+        @include bg-img;
+    }
+
+    &-standart {
+        background-image: url(../images/subscribe_2.png);
+        @include bg-img;
+    }
+
+    &-premium {
+        background-image: url(../images/subscribe_3.png);
+        @include bg-img;
+    }
+}
+
+/* NEWS */
+.new {
+    margin-bottom: 65px;
+    display: flex;
+    gap: 50px;
+
+    &_reverse {
+        flex-direction: row-reverse;
+    }
+
+    h3 {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: 0;
+        text-transform: capitalize;
+    }
+
+    .author {
+        font-size: 12px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &__name {
+        color: #f89202; 
+        }
+    }   
+}
+
+/* APP */
+.app {
+    display: flex;
+    padding-bottom: 100px;
+
+    &__col {
+        width: 50%;
+    }
+
+    &__link {
+        border-radius: 32px;
+    }
+    &__img {
+        justify-content: center;
+    }
+}
+
+/* MOBIL */
+@media screen and (max-width: 1239px) {
+    .form {
+        grid-template-areas: "col-1 col-1" "col-2 col-2" "col-3 col-3";
+    }
+    
+    .price {
+        grid-template-columns: 1fr;
+    }
+
+    .new {
+        flex-direction: column;
+
+        &__col__img {
+            width: 100%;
+            flex-shrink: 1;
+        }
+    }
+
+    .app {
+        flex-direction: column-reverse;
+
+        &__col {
+            width: 100%;
+        }
+    }
+}
+
+

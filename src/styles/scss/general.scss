@@ -1,0 +1,151 @@
+$black: #08020d;
+$dark: #3c3b3d;
+$white: #ffffff;
+$gray: #cacaca;
+$light-gray: #e0e0e0;
+$green: #34c176;
+$orange: #f89202;
+$purple: #5328a1;
+$brown: #95390c;
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url("/styles/font/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-bold"), url("/styles/font/Roboto-Bold.ttf");
+}
+
+@mixin titles-style {
+  color: $white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $gray;
+  margin: 0;
+  background-color: $black;
+
+  ul, li {
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  display: block;
+  padding: 20px 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+
+  &-green {
+    font-size: 13.3px;
+    min-height: 57px;
+    background-color: $green;
+  }
+
+  &__active {
+    color: #fff;
+  }
+
+  &-white {
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+
+  &-gray {
+    font-size: 12.8px;
+    color: $gray;
+    width: max-content;
+    background-color: transparent;
+    border: 1px solid #cacaca;
+  }
+
+  &-purple {
+    font-size: 12.8px;
+    display: inline-block;
+    background-color: #5328A1;
+  }
+
+  &-red {
+    font-size: 12.8px;
+    display: inline-block;
+    background-color: #95390C;
+  }
+
+  &__footer {
+    color: #e0e0e0;
+  }
+}
+
+/* DESKTOP */
+
+h1 {
+  font-size: 60px;
+  line-height: 90px;
+  @include titles-style;
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 57px;
+  @include titles-style;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.padding-top {
+  padding-top: 100px;
+}
+
+/* MOBIL */
+@media screen and (max-width: 1239px) {
+  h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+
+  .flex_center {
+    flex-direction: column;
+    align-items: start;
+  }
+}
